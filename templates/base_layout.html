@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Default title {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navigation-menu">
+            <div class="logo">
+                <a href="/">
+                    <img src="{% static 'img/logo.png' %}" alt="Логотип сайта" height="20">
+                    <span>REadi</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/articles">Статьи</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %} {% endblock content %}
+    </main>
+</body>
+</html>
