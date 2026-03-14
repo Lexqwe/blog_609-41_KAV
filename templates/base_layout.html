@@ -18,7 +18,24 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">О нас</a></li>
-                <li><a href="/articles">Статьи</a></li>
+                <li>
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <li>
+                                <form class="form" action="{% url 'accounts:logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Logout</button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <li>
+                                <form class="form"  action="{% url 'accounts:login' %}" method="get">
+                                    <button type="submit">Login</button>
+                                </form>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>

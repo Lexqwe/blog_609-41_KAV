@@ -1,7 +1,7 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
@@ -23,7 +23,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return HttpResponseRedirect('/articles')
+            if 'next' in request.POST:
+                return redirect(request.POST['next'])
+            return redirect('homepage')
+            # return redirect('articles:list')
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', {'form': form})
