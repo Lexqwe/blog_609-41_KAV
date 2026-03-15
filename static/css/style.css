@@ -125,7 +125,7 @@ main {
 }
 
 .article-detail img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin: 20px 0;
     border-radius: 8px;
@@ -187,4 +187,146 @@ nav ul {
 
 .create-button:hover {
     background-color: #218838;
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-warning{
+    background-color: blue;
+}
+
+.btn-warning:hover {
+    background-color: #0066cc;
+}
+
+.btn-danger{
+    background-color: red;
+}
+
+.btn-danger:hover{
+    background-color: orangered;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    main {
+        max-width: 960px;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .articles {
+        max-width: 700px;
+    }
+
+    .article-detail {
+        max-width: 700px;
+    }
+
+    .article-detail img {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navigation-menu {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .navigation-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    .article__item {
+        padding: 15px;
+    }
+
+    .article-detail img {
+        max-width: 80%;
+    }
+
+    .article-detail div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .article-detail .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navigation-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation-menu ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation-menu ul li form {
+        width: 100%;
+    }
+
+    .navigation-menu ul li button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .article-detail img {
+        max-width: 100%;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .form input,
+    .form button {
+        font-size: 16px;
+    }
 }
